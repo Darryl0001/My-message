@@ -1,0 +1,170 @@
+/* Reset and basic styles */
+body,html {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100dvh;
+    overflow: hidden;
+    color: #4a4848;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    width: 768px;
+    height: 100dvh;
+    background-color: #e5e4e2; 
+    padding: 4rem 2rem 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.flower {
+    position: absolute;
+    bottom: 0; /* Start hidden below the container */
+    width: 8vw; /* Set responsive width */
+    animation: rise 1s ease-out forwards; 
+}
+
+.btn_container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    
+}
+
+.btn_next {
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    margin-top: 2rem;
+    border-bottom: 1px solid #4a4848;
+}
+
+/* Animation for flower appearance */
+@keyframes rise {
+    from {
+        transform: translateY(100px); /* Start below the screen */
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0); /* Move into view */
+        opacity: 1;
+    }
+}
+.text_container{
+  
+}
+.txt_message {
+    font-size: 1.4rem;
+    word-wrap: break-word; /* Prevent text overflow */
+    max-width: 100%; /* Ensure text stays within the container */
+}
+.joke_txt {
+    font-family: Times New Roman;
+    font-style: italic;
+    font-size: 1.4rem;
+}
+.txt_message.importantTxt {
+    font-family: Times New Roman;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+.bigJoke{
+  font-family: Times New Roman;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 2.3rem;
+    margin-bottom: 2rem;
+    margin-top:-0.8rem;
+}
+
+
+.cursor {
+    position: relative;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.7s ease-in-out, visibility 0s;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.image {
+    width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius:4px;
+}
+.bb{
+  font-size: 1.8rem;
+}
+.back_btn {
+    position: absolute;
+    top: 10px; /* Adjust the top distance as needed */
+    left: 10px; /* Adjust the left distance as needed */
+    background-color: transparent;
+    border: none;
+    color: #4a4848; /* You can change this to any text color */
+    font-size: 1.2rem; /* Adjust the font size as needed */
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Mobile view adjustments (screens 768px or smaller) */
+@media (max-width: 768px) {
+    .flower {
+        width: 40vw;
+        animation: rise 1s ease-out forwards;
+    }
+    .image {
+        width: 200px;
+        height: 200px;
+    }
+    .joke_txt {
+        max-width: 90vw;
+    }
+    .container {
+        padding: 4rem 1rem 1rem 1rem;
+    }
+    .text_container{
+      max-height:50vh;
+    }
+    .joke_txt {
+      font-size:1rem;
+    }
+    .bigJoke{
+      font-size: 1.2rem;
+    }
+}
+
+/* Animation */
+.typewriter-animation {
+    animation: 
+        typewriter 1s steps(50) 1s 1 normal both, 
+        blinkingCursor 500ms steps(50) infinite normal;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkingCursor {
+    from { border-right-color: rgba(255, 255, 255, 0.75); }
+    to { border-right-color: transparent; }
+}

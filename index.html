@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function updateContainerWidth() {
+    
+    const container = document.querySelector('.container');
+    const deviceWidth = window.innerWidth; // Get the current device width
+
+    if (deviceWidth <= 768) {
+        // Mobile or small screens
+        container.style.width = '90vw'; // Set container width to 90% of viewport width for mobile
+    } else if (deviceWidth <= 1024) {
+        // Tablet screens
+        container.style.width = '80vw'; // Set container width to 80% of viewport width for tablets
+    } else {
+        // Desktop screens
+        container.style.width = '70vw'; // Set container width to 70% of viewport width for desktop
+    }
+}
+
+// Update the container width when the page loads
+window.addEventListener('load', updateContainerWidth);
+window.addEventListener('resize', updateContainerWidth);
+
+    </script>
+    <script src="flower.js" type="module"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+          <button class="back_btn">
+        Back
+      </button>
+    <div class="text_container">
+      
+    </div>
+    <div class="btn_container">
+      <button class="btn_next">
+        Do you want to read it?
+      </button>
+    </div>
+      
+      
+      
+    <img src="./img/sunflower.png" class="flower"/>
+  </div>
+  
+  
+
+    
+    <script src="script.js" type="module"></script>
+      <script src="image.js" type="module"></script>
+</body>
+</html>
